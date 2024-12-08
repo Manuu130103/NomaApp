@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardados - NOMA</title>
+    <link rel="stylesheet" href="css/guardados.css">
+</head>
+<body>
+    <main class="saved-container">
+        <!-- Botón Volver -->
+        <div class="back-button-container">
+            <button onclick="window.location.href='index.html'" class="back-button" aria-label="Volver a la página principal">Volver</button>
+        </div>
+
+        <h1>Direcciones Guardadas</h1>
+
+        <!-- Lista de direcciones -->
+        <section class="saved-list" aria-labelledby="saved-title">
+            <h2 id="saved-title">Lista de Direcciones Guardadas</h2>
+
+            <!-- Ejemplo de una dirección guardada -->
+            <div class="saved-item">
+                <button class="toggle-btn" aria-expanded="false" aria-controls="details-1">
+                    <h3>Casa de Juan</h3>
+                </button>
+                <div id="details-1" class="details hidden" role="region">
+                    <p><strong>Calle:</strong> Calle Logroño, 123</p>
+                    <p><strong>Provincia:</strong> La Rioja</p>
+                    <p><strong>País:</strong> España</p>
+                    <p><strong>Código Postal:</strong> 26001</p>
+                    <button class="go-btn" onclick="window.location.href='index.html'" aria-label="Ir a la dirección Casa de Juan">Ir</button>
+                </div>
+            </div>
+
+            <div class="saved-item">
+                <button class="toggle-btn" aria-expanded="false" aria-controls="details-2">
+                    <h3>Oficina Central</h3>
+                </button>
+                <div id="details-2" class="details hidden" role="region">
+                    <p><strong>Calle:</strong> Paseo de la Castellana, 280</p>
+                    <p><strong>Provincia:</strong> Madrid</p>
+                    <p><strong>País:</strong> España</p>
+                    <p><strong>Código Postal:</strong> 28046</p>
+                    <button class="go-btn" onclick="window.location.href='index.html'" aria-label="Ir a la dirección Oficina Central">Ir</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/guardados.js"></script>
+</body>
+</html>

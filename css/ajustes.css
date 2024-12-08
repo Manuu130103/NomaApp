@@ -1,0 +1,153 @@
+/* Estilo General */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #eafaf1, #d2e5ff);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Márgenes para mostrar el fondo */
+    box-sizing: border-box;
+}
+
+.settings-container {
+    width: 90%;
+    max-width: 500px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Títulos */
+h1 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.setting-section h2 {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Select Personalizado */
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #f9f9f9;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Botones */
+button {
+    width: 100%;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+/* Radio Buttons */
+.theme-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.theme-options label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.theme-options input {
+    margin-right: 10px;
+}
+
+/* Toggle Checkbox */
+.toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.toggle-text {
+    font-size: 1rem;
+}
+
+/* Botón Volver */
+.back-button-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.back-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background: #45a049;
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+    .settings-container {
+        width: 100%;
+        padding: 15px;
+        margin: 10px; /* Márgenes adicionales para mostrar el fondo */
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .setting-section h2 {
+        font-size: 1.3rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    select {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .theme-options label {
+        font-size: 0.9rem;
+    }
+
+    .back-button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}

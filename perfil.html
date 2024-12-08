@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - NOMA</title>
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+<body>
+    <main class="profile-container" role="main" aria-labelledby="profile-title">
+        <!-- Botón Volver -->
+        <div class="back-button-container">
+            <button onclick="window.location.href='index.html'" class="back-button" aria-label="Volver a la página principal">Volver</button>
+        </div>
+
+        <!-- Foto del perfil -->
+        <div class="profile-pic-container">
+            <img src="img/perfil.png" alt="Foto de perfil del usuario" class="profile-pic" aria-hidden="true">
+        </div>
+
+        <!-- Información del usuario -->
+        <div class="user-info">
+            <h1 id="profile-title">Nombre del Usuario</h1>
+            <p>Email: usuario@ejemplo.com</p>
+            <p>Teléfono: +34 123 456 789</p>
+        </div>
+
+        <!-- Sección de preferencias -->
+        <div class="preferences" aria-labelledby="preferences-title">
+            <h2 id="preferences-title">Preferencias</h2>
+            <div class="preference-icons">
+                <div class="icon" data-filter="wheelchair" role="button" tabindex="0" aria-label="Preferencia: Silla de ruedas">
+                    <img src="img/wheelchair-2-svgrepo-com.svg" alt="Silla de ruedas">
+                    <p>Silla de ruedas</p>
+                </div>
+                <div class="icon" data-filter="ramp" role="button" tabindex="0" aria-label="Preferencia: Rampas">
+                    <img src="img/rampa.png" alt="Rampas">
+                    <p>Rampas</p>
+                </div>
+                <div class="icon" data-filter="elevator" role="button" tabindex="0" aria-label="Preferencia: Ascensores">
+                    <img src="img/elevator-svgrepo-com.svg" alt="Ascensores">
+                    <p>Ascensores</p>
+                </div>
+                <div class="icon" data-filter="parking" role="button" tabindex="0" aria-label="Preferencia: Aparcamiento">
+                    <img src="img/handicapped_parking_icon_187954.svg" alt="Aparcamiento">
+                    <p>Aparcamiento</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de restricciones -->
+        <div class="restrictions" aria-labelledby="restrictions-title">
+            <h2 id="restrictions-title">Restricciones</h2>
+            <div class="restriction-icons">
+                <div class="icon" data-filter="stairs" role="button" tabindex="0" aria-label="Restricción: Escaleras">
+                    <img src="img/stairs.png" alt="Escaleras">
+                    <p>Escaleras</p>
+                </div>
+                <div class="icon" data-filter="narrow" role="button" tabindex="0" aria-label="Restricción: Espacios angostos">
+                    <img src="img/narrow.png" alt="Espacios angostos">
+                    <p>Espacios angostos</p>
+                </div>
+                <div class="icon" data-filter="gravel" role="button" tabindex="0" aria-label="Restricción: Terrenos irregulares">
+                    <img src="img/gravel.png" alt="Terrenos irregulares">
+                    <p>Terrenos irregulares</p>
+                </div>
+                <div class="icon" data-filter="slopes" role="button" tabindex="0" aria-label="Restricción: Pendientes">
+                    <img src="img/slopes.png" alt="Pendientes">
+                    <p>Pendientes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contacto de emergencia -->
+        <div class="emergency-contact" aria-labelledby="emergency-contact-title">
+            <h2 id="emergency-contact-title">Contacto de Emergencia</h2>
+            <button id="add-contact-btn" class="add-contact-btn" aria-label="Añadir contacto de emergencia">Añadir contacto</button>
+            <form id="contact-form" class="hidden" aria-hidden="true">
+                <input type="text" id="contact-name" placeholder="Nombre" required aria-required="true" aria-label="Nombre del contacto">
+                <input type="text" id="contact-surname" placeholder="Apellidos" required aria-required="true" aria-label="Apellidos del contacto">
+                <input type="tel" id="contact-phone" placeholder="Número de teléfono" required aria-required="true" aria-label="Número de teléfono del contacto">
+                <button type="submit" class="save-contact-btn" aria-label="Guardar contacto de emergencia">Guardar</button>
+            </form>
+            <div id="contact-info" class="hidden" aria-hidden="true">
+                <h3>Contacto guardado:</h3>
+                <p id="contact-name-display"></p>
+                <p id="contact-phone-display"></p>
+                <button id="edit-contact-btn" class="edit-contact-btn hidden" aria-label="Editar contacto de emergencia">Editar</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/perfil.js"></script>
+</body>
+</html>

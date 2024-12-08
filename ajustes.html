@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajustes - NOMA</title>
+    <link rel="stylesheet" href="css/ajustes.css">
+</head>
+<body>
+    <main class="settings-container">
+        <!-- Botón Volver -->
+        <div class="back-button-container">
+            <button onclick="window.location.href='index.html'" class="back-button" aria-label="Volver a la página principal">Volver</button>
+        </div>
+
+        <h1>Configuración</h1>
+
+        <!-- Idioma -->
+        <section class="setting-section" aria-labelledby="language-label">
+            <h2 id="language-label">Idioma</h2>
+            <label for="language-select">Selecciona el idioma:</label>
+            <select id="language-select" class="custom-select" aria-describedby="language-description">
+                <option value="es" selected>Español</option>
+                <option value="en">Inglés</option>
+                <option value="fr">Francés</option>
+                <option value="pt">Portugués</option>
+            </select>
+            <p id="language-description">Cambia el idioma de la interfaz de usuario.</p>
+        </section>
+
+        <!-- Tema -->
+        <section class="setting-section" aria-labelledby="theme-label">
+            <h2 id="theme-label">Tema</h2>
+            <fieldset>
+                <legend>Selecciona el tema:</legend>
+                <div class="theme-options">
+                    <label for="theme-light" class="radio-label">
+                        <input type="radio" id="theme-light" name="theme" value="light" checked>
+                        <span>Claro</span>
+                    </label>
+                    <label for="theme-dark" class="radio-label">
+                        <input type="radio" id="theme-dark" name="theme" value="dark">
+                        <span>Oscuro</span>
+                    </label>
+                </div>
+            </fieldset>
+        </section>
+
+        <!-- Contraseña -->
+        <section class="setting-section" aria-labelledby="password-label">
+            <h2 id="password-label">Cambiar Contraseña</h2>
+            <button class="change-password-btn" onclick="alert('Funcionalidad en desarrollo')" aria-label="Cambiar contraseña (en desarrollo)">Cambiar Contraseña</button>
+        </section>
+
+        <!-- Notificaciones -->
+        <section class="setting-section" aria-labelledby="notifications-label">
+            <h2 id="notifications-label">Notificaciones</h2>
+            <label for="notifications-toggle" class="toggle-label">
+                <input type="checkbox" id="notifications-toggle" checked>
+                <span class="toggle-text">Activar notificaciones en tiempo real</span>
+            </label>
+        </section>
+    </main>
+
+    <script src="js/ajustes.js"></script>
+</body>
+</html>

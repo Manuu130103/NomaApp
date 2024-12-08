@@ -1,0 +1,165 @@
+/* General */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #eafaf1, #d2e5ff);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.saved-container {
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Lista de direcciones */
+.saved-list {
+    margin-top: 20px;
+}
+
+.saved-item {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.saved-item:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-btn {
+    width: 100%;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-btn:hover {
+    background: #45a049;
+}
+
+.toggle-btn h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+/* Detalles ocultos */
+.details {
+    background: #f9f9f9;
+    padding: 15px;
+    display: none;
+    border-top: 1px solid #ddd;
+    text-align: left;
+}
+
+.details p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.details.hidden {
+    display: none;
+}
+
+/* Botón de Volver */
+.back-button-container {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.back-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background: #45a049;
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+    .saved-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .toggle-btn {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+
+    .details p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Botón Ir */
+.go-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    text-align: center;
+}
+
+.go-btn:hover {
+    background: #45a049;
+}
+
+/* Detalles ocultos */
+.details {
+    background: #f9f9f9;
+    padding: 15px;
+    display: none;
+    border-top: 1px solid #ddd;
+    text-align: left;
+}
+
+.details p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #555;
+}
