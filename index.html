@@ -26,5 +26,50 @@
             <span>¿No tienes una cuenta? <a href="registro.html" aria-label="Ir a la página de registro">Regístrate</a></span>
         </div>
     </div>
+<<<<<<< HEAD
+=======
+
+    <!-- Contenedor principal -->
+    <main>
+        <div class="notification hidden" id="notification" aria-live="assertive" aria-atomic="true">
+            <img src="img/obras.png" alt="Peligro" class="notification-icon">
+            <p class="notification-text">Obras en la calle Logroño.</p>
+        </div>
+
+        <!-- Contenedor del mapa -->
+        <section class="map-container" aria-label="Mapa interactivo con filtros de accesibilidad">
+            <div id="map" aria-label="Mapa"></div>
+
+            <!-- Filtros interactivos en el borde derecho -->
+            <div class="filters" aria-label="Filtros de accesibilidad">
+                <div class="icon" data-filter="wheelchair" aria-label="Filtrar por accesibilidad para sillas de ruedas">
+                    <img src="img/wheelchair-2-svgrepo-com.svg" alt="Silla de ruedas">
+                </div>
+                <div class="icon" data-filter="ramp" aria-label="Filtrar por rampas">
+                    <img src="img/rampa.png" alt="Rampas">
+                </div>
+                <div class="icon" data-filter="elevator" aria-label="Filtrar por ascensores">
+                    <img src="img/elevator-svgrepo-com.svg" alt="Ascensores">
+                </div>
+                <div class="icon" data-filter="parking" aria-label="Filtrar por aparcamiento para discapacitados">
+                    <img src="img/handicapped_parking_icon_187954.svg" alt="Aparcamiento">
+                </div>
+                <div class="icon" data-filter="stairs" aria-label="Filtrar por escaleras">
+                    <img src="img/stairs-1-svgrepo-com.svg" alt="Escaleras">
+                </div>
+                <div class="icon" data-filter="slopes" aria-label="Filtrar por pendientes">
+                    <img src="img/slope.svg" alt="Pendientes">
+                </div>
+            </div>
+        </section>
+
+        <button class="floating-help-btn" onclick="window.location.href='ayuda.html'" aria-label="Ir a la página de ayuda">❓</button>
+    </main>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Script personalizado -->
+    <script src="js/main.js"></script>
+>>>>>>> 513113922333b6920c9c711bf39c8a634e398a9d
 </body>
 </html>
