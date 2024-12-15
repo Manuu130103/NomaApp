@@ -1,149 +1,367 @@
-/* Estilos base */
+/* General */
 body {
     margin: 0;
-    padding: 0;
     font-family: Arial, sans-serif;
-    background: url('../img/imagenfondo.png') no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh;
+    background-color: #f5f5f5;
+    overflow: hidden; /* Oculta las barras de desplazamiento */
+}
+
+html {
+    overflow: hidden; /* Oculta las barras de desplazamiento */
+    height: 100%; /* Asegura que el contenido tome el 100% de la altura */
+}
+
+main {
+    overflow-y: scroll; /* Permite el desplazamiento vertical */
+    -ms-overflow-style: none; /* Para ocultar en Internet Explorer y Edge */
+    scrollbar-width: none; /* Oculta el scroll en Firefox */
+}
+
+main::-webkit-scrollbar {
+    display: none; /* Oculta el scroll en navegadores basados en WebKit */
+}
+
+/* Encabezado */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.search-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    height: 36px;
+}
+
+.profile {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.container {
-    background: rgba(255, 255, 255, 0.9);
-    width: 85%; /* Reducido para dejar margen */
-    max-width: 400px;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.container img {
-    width: 70px;
-    margin-bottom: 20px;
-}
-
-.container h1 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.form-group label {
-    font-size: 0.9rem;
-    color: #555;
-    margin-bottom: 5px;
-    display: block;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 12px; /* Igual que el botón */
-    font-size: 1rem; /* Tamaño consistente con el botón */
-    border: 1px solid #ddd;
-    border-radius: 8px; /* Igual que el botón */
-    box-sizing: border-box; /* Asegura que padding y borde estén dentro del ancho */
-    margin-top: 5px;
-}
-
-
-.form-group input:focus {
-    outline: none;
-    border-color: #4CAF50;
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
-}
-
-.btn {
-    background: #4CAF50;
-    color: white;
-    padding: 12px;
-    width: 100%;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-top: 15px;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background: #45a049;
-}
-
-.switch {
-    margin-top: 15px;
-    font-size: 0.9rem;
-}
-
-.switch a {
-    color: #4CAF50;
     text-decoration: none;
 }
 
-.switch a:hover {
-    text-decoration: underline;
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
 }
 
-/* Responsividad para móviles pequeños */
-@media screen and (max-width: 480px) {
-    .container {
-        padding: 20px;
-        width: 80%; /* Más margen para mostrar el fondo */
-    }
+/* Menú lateral */
+.sidebar {
+    position: fixed;
+    top: 30px;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background: white;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+}
 
-    .container img {
-        width: 60px;
-    }
+.sidebar.open {
+    left: 0;
+}
 
-    .container h1 {
-        font-size: 1.3rem;
-    }
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+}
 
-    .form-group input {
-        padding: 10px;
-        font-size: 0.9rem;
-    }
+.sidebar ul li {
+    margin-bottom: 15px;
+}
 
-    .btn {
-        padding: 10px;
-        font-size: 0.9rem;
-    }
+.sidebar ul li button {
+    width: 100%;
+    background: #eafaf1; /* Tonalidad verde claro */
+    border: 1px solid #ddd; /* Borde claro */
+    color: #333; /* Texto oscuro */
+    text-align: left;
+    font-size: 1rem;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-    .switch {
+.sidebar ul li button:hover {
+    background-color: #d2e5ff; /* Tonalidad azul claro para el hover */
+    color: #1f1f1f; /* Texto más oscuro al hacer hover */
+}
+
+/* Mapa */
+.map-container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Filtros */
+.filters {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background-color 0.3s;
+    border: 2px solid #ddd;
+    background-color: #f5f5f5;
+}
+
+.icon img {
+    width: 20px;
+    height: 20px;
+}
+
+.icon.selected {
+    border-color: #4CAF50;
+    background-color: #eafaf1;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+/* --- Adaptación a Móviles --- */
+@media (max-width: 768px) {
+    .search-input {
+        flex: 1;
         font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+
+    .profile-pic {
+        width: 35px;
+        height: 35px;
+    }
+
+    .filters {
+        top: 10px;
+        right: 5px;
+        gap: 8px;
+        padding: 6px;
+    }
+
+    .icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .icon img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .sidebar ul li button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .notification {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+
+    .notification-icon {
+        width: 25px;
+        height: 25px;
+        margin-right: 8px;
+    }
+
+    .filters .icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .filters .icon img {
+        width: 18px;
+        height: 18px;
+    }
+
+    #map {
+        height: calc(100vh - 100px); /* Reduce altura en móvil */
     }
 }
 
-/* Responsividad para pantallas medianas (iPhone Pro Max) */
-@media screen and (min-width: 481px) and (max-width: 768px) {
-    .container {
-        padding: 30px;
-        width: 75%; /* Más margen visible en pantallas más grandes */
-    }
 
-    .container img {
-        width: 70px;
-    }
+/* Notificación Estilo Móvil */
+.notification {
+    position: absolute;
+    top: 0; /* Aparece inicialmente justo donde comienza el mapa */
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%); /* Esconde la notificación hacia arriba */
+    background-color: #FFCC00; /* Fondo amarillo de advertencia */
+    color: #333;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 0; /* Inicialmente invisible */
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    width: 90%;
+    max-width: 500px;
+}
 
-    .container h1 {
-        font-size: 1.5rem;
-    }
+.notification.visible {
+    opacity: 1;
+    pointer-events: auto; /* Hacer interactuable cuando es visible */
+    transform: translateX(-50%) translateY(20px); /* Baja hacia el área visible justo encima del mapa */
+}
 
-    .form-group input {
-        padding: 12px;
-        font-size: 1rem;
-    }
+.notification.hidden {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-100%); /* Se mueve hacia arriba cuando está oculta */
+}
 
-    .btn {
-        padding: 12px;
-        font-size: 1rem;
-    }
+.notification-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px; /* Separación entre la imagen y el texto */
+}
+
+.notification-text {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #333;
+}
+
+.floating-help-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ffffff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+    z-index: 1000;
+}
+
+.floating-help-btn:hover {
+    background: #dedede;
+    transform: scale(1.1);
+}
+
+/* Icono de notificaciones */
+.notification-icon {
+    position: relative;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.notification-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+/* Panel de notificaciones */
+.notification-panel {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.notification-panel.hidden {
+    display: none;
+}
+
+.notification-panel h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.notification-panel ul {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.notification-panel ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+.notification-panel ul li:last-child {
+    border-bottom: none;
 }

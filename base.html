@@ -16,23 +16,19 @@
     <header>
         <div class="search-bar">
             <button class="menu-btn" id="menu-toggle" aria-label="Abrir o cerrar menú">☰</button>
+            <a href="index.html" class="logo" aria-label="Ir a la página principal">
+                <img src="img/noma.png" alt="Logo de NOMA" class="logo-img" style="height: 40px;">
+            </a>
             <input type="text" id="search-input" class="search-input" placeholder="Buscar dirección..." aria-label="Campo de búsqueda">
             <button id="search-btn" class="search-btn" aria-label="Buscar dirección">🔍</button>
-            <a href="perfil.html" class="profile" aria-label="Ir al perfil">
-                <img src="img/perfil.png" alt="Perfil" class="profile-pic">
+            <a href="perfil.html" class="profile" aria-label="Ir al perfil" style="display: flex; flex-direction: column; align-items: center; text-decoration: none;">
+                <img src="img/perfil.png" alt="Perfil" class="profile-pic" style="width: 50px; height: 50px;">
+                <p class="profile-text" style="margin: 5px 0 0; font-size: 0.9rem; color: #333;">Perfil</p>
             </a>
             <!-- Icono de notificaciones -->
             <div class="notification-icon" id="notification-icon" aria-label="Ver notificaciones">
                 <img src="img/notificacion.png" alt="Notificaciones">
                 <span id="notification-count" class="notification-count" aria-live="polite" aria-atomic="true">3</span>
-            </div>
-
-            <!-- Panel de notificaciones -->
-            <div class="notification-panel hidden" id="notification-panel" aria-hidden="true">
-                <h2>Notificaciones</h2>
-                <ul id="notification-list" aria-live="polite" aria-atomic="true">
-                    <!-- Las notificaciones simuladas aparecerán aquí -->
-                </ul>
             </div>
         </div>
     </header>
@@ -78,10 +74,10 @@
                     <img src="img/handicapped_parking_icon_187954.svg" alt="Aparcamiento">
                 </div>
                 <div class="icon" data-filter="stairs" aria-label="Filtrar por escaleras">
-                    <img src="img/stairs-1-svgrepo-com.svg" alt="Escaleras">
+                    <img src="img/stairs.png" alt="Escaleras">
                 </div>
                 <div class="icon" data-filter="slopes" aria-label="Filtrar por pendientes">
-                    <img src="img/slope.svg" alt="Pendientes">
+                    <img src="img/slopes.png" alt="Pendientes">
                 </div>
             </div>
         </section>
