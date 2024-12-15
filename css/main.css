@@ -73,7 +73,7 @@ header {
 /* Menú lateral */
 .sidebar {
     position: fixed;
-    top: 20px;
+    top: 30px;
     left: -250px;
     width: 250px;
     height: 100vh;
